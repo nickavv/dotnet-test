@@ -5,6 +5,29 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp1.1</TargetFramework>
+    <appname>dotnet-test</appname>
+    <builtdir>bin</builtdir>
   </PropertyGroup>
+
+  <Target Name = "Build">
+      <!-- Check whether an output folder exists and create
+      one if necessary -->
+      <MakeDir Directories = "$(builtdir)"
+          Condition = "!Exists('$(builtdir)')" />
+
+      <!-- Run the Visual C# compiler -->
+      <CSC Sources = "@(CSFile)"
+          OutputAssembly = "$(BuiltDir)\$(appname).exe">
+          <Output TaskParameter = "OutputAssembly"
+              ItemName = "EXEFile" />
+      </CSC>
+
+      <!-- Log the file name of the output file -->
+      <Message Text="The output file is @(EXEFile)"/>
+  </Target>
+
+  <Target Name = "Clean">
+      <RemoveDir Directories="$(builtdir)" />
+  </Target>
 
 </Project>
