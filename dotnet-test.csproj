@@ -2,6 +2,10 @@
           Sdk="Microsoft.NET.Sdk"
           DefaultTargets="Clean;Build">
 
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+  </ItemGroup>
+
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp1.1</TargetFramework>
