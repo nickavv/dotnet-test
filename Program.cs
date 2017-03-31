@@ -6,7 +6,7 @@ namespace dotnet_hw
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Hello arguments: " + string.Join(", ", args));
         }
     }
 }

@@ -1,5 +1,6 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003"
-          Sdk="Microsoft.NET.Sdk">
+          Sdk="Microsoft.NET.Sdk"
+          DefaultTargets="Clean;Build">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
