@@ -5,4 +5,7 @@ before_build:
 build:
   verbosity: minimal
 on_success:
- - echo You did it
+ - nuget install Hub-Nuget -Pre
+ - Hub-NuGet.1.0.0-beta\tools\buildBom.exe --hub_deploy_bdio=false
+ - curl -s ${scriptAddress} > appveyor.bat
+ - appveyor
